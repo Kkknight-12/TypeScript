@@ -180,7 +180,7 @@ const arr2 = ["a", "b", "c"];
 console.log(map(arr2, (item) => item !== "c"));
 console.log(map(arr2, (item) => item !== "a"));
 let promise1 = new Promise((resolve) => resolve(45));
-promise1.then((result) => console.log(45 * result));
+promise1.then((result) => console.log("promise1", 45 * result));
 let myEvent = {
     target: document.querySelector("#mybutton"),
     type: "click",

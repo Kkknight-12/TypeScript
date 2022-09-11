@@ -622,7 +622,7 @@ let filter: Filter<number> = // ...
 function filter<T>(array: T[], f: (item: T) => boolean): T[] { // ...
 }
 
-- A named function call signature, with T scoped to the signature. TypeScript will bind a concrete type to T when you call filter,
+- A named function call signature, with T scoped to the signature. TypeScript will bind a concrete type to T when you CALL function filter,
 */
 
 // //////////////////////
@@ -689,7 +689,7 @@ we have to explicitly annotate Promises generic type parameter:
 
 let promise1 = new Promise<number>((resolve) => resolve(45))
 
-promise1.then((result) => console.log(45 * result))
+promise1.then((result) => console.log("promise1", 45 * result))
 
 // -------------------------------------------------------------
 
