@@ -6,7 +6,7 @@
 // ---------------------------------------------------------------------
 
 // Example 1
-// [Property in keyof-and-mapped T] => iterate over properties of type T,
+// [Property in keyof T] => iterate over properties of type T,
 // square bracket is index signature syntax,
 // : boolean => and change there type to boolean
 type OptionsFlags<T> = {
