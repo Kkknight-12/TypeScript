@@ -81,7 +81,7 @@ console.log(
 );
 
 // How It Works
-// dataIn : Record< keyof-and-mapped Animal, string >
+// dataIn : Record< keyof Animal, string >
 // is equivalent to
 // dataIn: Record<"age" | "name" | "maximumDeepness" | "numberOfLegs" |
 // "canSwim" | "runningSpeed", string>

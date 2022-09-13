@@ -1,6 +1,6 @@
 /*  Partial mapped type sets every property to optional.
  *  type Partial<T> = {
-    [P in keyof-and-mapped T]?: T[P];
+    [P in keyof T]?: T[P];
 }
  *  */
 interface Todo {
@@ -8,6 +8,25 @@ interface Todo {
   description: string;
 }
 
+// Example 1
+// writing partial type with help of mapped type
+type OwnPartial<T> = {
+  // map over all keys and make them optional
+  [P in keyof T]?: T[P];
+};
+
+type OptionalTodo = OwnPartial<Todo>;
+
+function printTodo(todo: OptionalTodo) {
+  return todo;
+}
+
+console.log(printTodo({ title: "Something" }));
+console.log(printTodo({ description: "Something Else" }));
+// console.log(printTodo({ otherKeys: "wont work" }));
+
+// Example 2
+// using built in partial function
 /*
  *  parameter one take Todo as its type
  *  parameter two also take todo as

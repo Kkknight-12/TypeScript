@@ -1,7 +1,7 @@
 // https://blog.devgenius.io/how-to-use-the-keyof-type-operator-in-typescript-6d5e0ea6740f
 
-/* keyof-and-mapped
- * keyof-and-mapped type operator takes an object type and create a union type of its key.
+/* keyof
+ * keyof type operator takes an object type and create a union type of its key.
  *  */
 
 type User = {
@@ -10,7 +10,7 @@ type User = {
   // adding new key here will be reflected in type UserKey
 };
 
-// we create a union type of keys of User type using keyof-and-mapped type operator
+// we create a union type of keys of User type using keyof type operator
 type UserKey = keyof User;
 // UserKey -> "name" | "age"
 

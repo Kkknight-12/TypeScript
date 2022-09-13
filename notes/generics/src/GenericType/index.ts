@@ -19,7 +19,7 @@ console.log(syntaxFunc<number>(12)); // 12
  Similarly syntaxFunc<number>(12) argument number within angle bracket
  represents generic type parameter T.
 
- < > are used to pass the type as Arguments
+ < > are used to pass the Generic type as Arguments
  */
 
 // ///////////////////////////
