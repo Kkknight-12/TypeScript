@@ -1,19 +1,24 @@
 {
-  "name": "understanding-typescript",
+  "name": "Typescript Notes",
   "version": "1.0.0",
   "description": "Understanding TypeScript Course Setup",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "ls": "lite-server",
+    "ts": "tsc -w",
+    "dev": "nodemon ./dist/app.js"
   },
   "keywords": [
     "typescript",
     "course"
   ],
-  "author": "Maximilian Schwarzmüller",
+  "author": "Mayank S",
   "license": "ISC",
   "devDependencies": {
+    "@types/ramda": "^0.28.18",
     "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "ramda": "^0.28.0"
   }
 }

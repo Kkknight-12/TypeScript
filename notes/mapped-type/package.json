@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server",
+    "ls": "lite-server",
+    "ts": "tsc -w",
     "dev" : "nodemon ./dist/app.js"
   },
   "keywords": [],

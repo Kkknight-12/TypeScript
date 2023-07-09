@@ -1,7 +1,8 @@
 // https://blog.devgenius.io/how-to-use-the-keyof-type-operator-in-typescript-6d5e0ea6740f
 
 /* keyof
- * keyof type operator takes an object type and create a union type of its key.
+ * keyof type operator takes an object type and create a union type -> ( | )
+ * of its key.
  *  */
 
 type User = {
@@ -59,7 +60,7 @@ console.log(getData(users, "age")); // [91,71]
 // Example 2
 // type User2 will be an object which
 // will have key name of type string
-// and kye age of type number
+// and key age of type number
 type User2 = { name: string; age: number };
 // variable user will be of type User2 but array of User2
 const user2: User2[] = [

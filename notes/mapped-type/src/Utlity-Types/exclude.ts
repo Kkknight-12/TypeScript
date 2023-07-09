@@ -37,3 +37,28 @@ const humanExtract: HumanExtract = {
 sayMyNameExtract(animalExtract); // Lion is of type Male
 sayMyNameExtract(humanExtract); // Jacob is of type Boy
 // sayMyNameExtract(animalExtractMakeSound);
+
+// -------------------------------------------------------------------------------
+
+// https://www.educative.io/module/lesson/variables-and-types/N8rgAp1Q2vD
+// Example 2
+interface StrangeObj {
+  foo: string;
+  bar: number;
+  1: string;
+  42: number;
+}
+
+type MyExtract<T, U> = T extends U ? T : never;
+
+function setStringProp<T, K extends MyExtract<keyof T, string>>(
+  obj: T,
+  key: K,
+  value: T[K]
+) {
+  obj[key] = value;
+}
+
+declare const obj3: StrangeObj;
+setStringProp(obj3, "bar", 1);
+// setStringProp(obj3, 42, 1); // 🔴 Error!

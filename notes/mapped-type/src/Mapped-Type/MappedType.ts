@@ -34,8 +34,8 @@ type FeatureOptions = {
 // /////////////////////////////////
 
 // iterate over type T and check
-// T[Property] extends Function -> if the property of type function then don't
-// do anything,
+// T[Property] extends Function -> if the property of type function then return
+// the property,
 // if not then change it to boolean
 // Example 2
 type OptionsFlagsF<T> = {
@@ -57,5 +57,18 @@ type FeatureOptionsF = OptionsFlagsF<Features>;
     userManagement: boolean;
     resetPassword: boolean;
 } */
+
+const sample: FeatureOptionsF = {
+  darkMode() {
+    console.log(this.userManagement);
+  },
+  newUserProfile() {
+    console.log(this.resetPassword);
+  },
+  userManagement: true,
+  resetPassword: false,
+  // Object literal may only specify known properties
+  // extra: 'not allowed',
+};
 
 // ---------------------------------------------------------------------

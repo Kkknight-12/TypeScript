@@ -45,6 +45,8 @@ const todo1 = {
 
 const todo2 = updateTodo(todo1, {
   description: "throw out trash",
+  // Object literal may only specify known properties
+  // canNotAddNewKey: 'doesn't work'
 });
 
 console.log(todo2);

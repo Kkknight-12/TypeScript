@@ -93,11 +93,23 @@ console.log(
 
 // Example 2
 // Construct a type with set of properties K of T
-type record<K extends string | number | symbol, T> = { [P in K]: T };
-// map through the keys of FeatureFlags and turn them to boolean
-type ChangeToBoolean = record<keyof FeatureFlags, boolean>;
+// { [P in K]: T } -> if P exist in K which is an object
+// then return the T which is boolean ( line 110 )
+type ownRecord<K extends string | number | symbol, T> = { [P in K]: T };
+// map through the keys of AcceptedFlags and turn them to boolean
+type AcceptedFlags = {
+  darkMode: () => void;
+  newUserProfile: () => void;
+};
 
-// using in Function
+/*
+ * {
+ * darkMode: boolean,
+ * newUserProfile: boolean
+ * } */
+type ChangeToBoolean = ownRecord<keyof AcceptedFlags, boolean>;
+
+// using record in Function
 // function changeToBoolean<T extends FeatureOptions3>(obj: T) {
 function changeToBoolean<T>(obj: T) {
   console.log(obj);
@@ -105,17 +117,24 @@ function changeToBoolean<T>(obj: T) {
 const obj = {
   darkMode: true,
   newUserProfile: true,
+  somethingExtra: "sas",
+  year: 2023,
 };
 changeToBoolean<ChangeToBoolean>(obj);
+/*
+ * {darkMode: true, newUserProfile: true, somethingExtra: 'sas', year: 2023}
+ */
 
 // creating new Variable
 let newObj: ChangeToBoolean = {
   darkMode: false,
   newUserProfile: true,
-  // darkMode and newUserProfile can only be used as key
-  // and value can be boolean only
+  // if darkMode and newUserProfile are used as key
+  // than their value can be boolean only
   // newUserProfile: 1,
   // newUserProfile: 'true',
-  // somethingNew: true
+  // somethingNew: true,
+  // year:2023,
 };
 console.log(newObj);
+// darkMode: false, newUserProfile: true}

@@ -1,9 +1,9 @@
 to watch the Typescript file and compile it to Js
 ```shell
-tsw -w
+npm run ts
 ```
 
 to start the server
 ```shell
-npm start
+npm run ls
 ```
